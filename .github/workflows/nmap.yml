@@ -15,6 +15,6 @@ jobs:
         sudo apt install nmap
      - name: run namp
        run: |
-        sudo nmap -sS -T2 zhheo.com
+        sudo nmap -sS -T4 zhheo.com
     
   
