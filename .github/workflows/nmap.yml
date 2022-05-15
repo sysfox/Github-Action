@@ -1,1 +1,17 @@
-
+name: nmap scan
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+jobs:
+  namp:
+    name: namp scan
+    runs-on: ubuntu-latest
+    steps:
+     - name: install namp
+       run: |
+        apt update
+        apt install nmap
+    
+  
