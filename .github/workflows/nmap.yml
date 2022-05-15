@@ -15,7 +15,6 @@ jobs:
         sudo apt install nmap
      - name: run namp
        run: |
-         nmap -sS -T2 zhheo.com
-         nmap --script=vuln zhheo.com
+        sudo nmap -sS -T2 zhheo.com
     
   
