@@ -11,7 +11,7 @@ jobs:
     steps:
      - name: install namp
        run: |
-        apt update
-        apt install nmap
+        sudo apt update
+        sudo apt install nmap
     
   
