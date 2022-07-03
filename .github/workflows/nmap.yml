@@ -16,6 +16,6 @@ jobs:
      - name: run namp
        run: |
         sudo nmap -O -sV zhheo.com
-        sudo nmap -p 0-26500 zhheo.com
+        sudo nmap -p 1-65535 zhheo.com
     
   
