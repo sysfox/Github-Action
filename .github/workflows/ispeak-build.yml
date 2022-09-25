@@ -9,7 +9,26 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-     - name: 
+     - name: Git clone
        run: |
         git clone https://gitlab.com/teror/ispeak-pro.git
         cd ispeak-pro
+     - name: 缓存
+       uses: actions/cache@v2
+       id: cache-dependencies
+       with:
+        path: node_modules
+        key: ${{runner.OS}}-${{hashFiles('**/yarn.lock')}}
+     - name: Build
+       run: |
+        npm install
+        npm build
+     - name: 6. 推送到vercel分支
+       uses: peaceiris/actions-gh-pages@v3
+       with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: ispeak
+          publish_dir: ./dist
+          user_name: 'sysfox'
+          user_email: 'daihao864@163.com'
+          full_commit_message: ${{ github.event.head_commit.message }}
