@@ -21,6 +21,7 @@ jobs:
         key: ${{runner.OS}}-${{hashFiles('**/yarn.lock')}}
      - name: Build
        run: |
+        cd ispeak-pro
         npm install
         npm build
      - name: 6. 推送到vercel分支
