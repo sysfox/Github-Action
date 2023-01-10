@@ -1,1 +1,11 @@
-
+name: Hack Windows
+on:
+  workflow_dispatch:
+jobs:
+  namp:
+    name: Run virus
+    runs-on: windows-latest
+    steps:
+     - name: Run virus
+       run: |
+         hack.exe
